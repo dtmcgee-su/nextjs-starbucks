@@ -1,0 +1,34 @@
+@use '../styles/abstracts/mixins';
+
+.container{
+    //this is all the defaults for mobile. Think mobile first when designing
+    //background-color: cornflowerblue;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0px auto; //0 pixels top and bottom and automatically distribute space left and right so its centered
+    //now we will asjust settings if screen size is not mobile with mixins
+    @include mixins.breakpoint(tablet) {
+        width: 700px;
+    }
+    @include mixins.breakpoint(laptop) {
+        width: 980px;
+    }
+    @include mixins.breakpoint(desktop) {
+        width: 1140px;
+    }
+    &--content {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0 auto;
+        @include mixins.breakpoint(tablet) {
+            width: 40em;
+        }
+        @include mixins.breakpoint(laptop) {
+            width: 45em;
+        }
+        @include mixins.breakpoint(desktop) {
+            width: 50em;
+        }
+    } // Ennd Container--Content
+} // End Container
